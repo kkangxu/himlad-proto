@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "code/code.proto";
+
+option go_package = "github.com/kkangxu/himlad-proto/base";
+
+
+
+// 通用请求体
+message BaseReq {
+    string caller = 1;              // 请求服务名称
+    string request_id = 2;          // request_id
+}
+
+// 通用返回体
+message BaseRet {
+    // 逻辑返回码
+    ErrCode code = 1;
+    // 逻辑错误msg
+    string msg = 2;
+    string request_id = 3;
+}
+
+message ReqComm {
+    BaseReq comm = 1;
+    message ReqPara {
+    }
+    ReqPara para = 2;
+}
+
+message RspComm {
+    BaseRet result = 1;
+    message RetData {
+    }
+    RetData data = 2;
+}

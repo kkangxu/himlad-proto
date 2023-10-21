@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "git.code.oa.com/himlad/proto/broker";
+
+// 主题定义
+enum Topic {
+    NilTopic = 0;
+    // 新的Topic定义
+    Iam = 1;
+    Mall = 2;
+}

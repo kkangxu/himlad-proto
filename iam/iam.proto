@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package iam;
+
+option go_package = "github.com/kkangxu/himlad-proto/iam";
+
+// User 用户
+message User {
+    uint64 id = 1;
+    string username = 2;
+    string uuid = 3;
+    uint32 type = 4;
+    string phone = 5;
+}

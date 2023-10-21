@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package mall;
+
+option go_package = "github.com/kkangxu/himlad-proto/mall";
+
+// Product 产品
+message Product {
+    uint64 id = 1;
+    string name = 2;
+    string uuid = 3;
+    uint32 type = 4;
+    string category = 5;
+    string description = 6;
+    string manufacturer = 7;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "git.code.oa.com/himlad/proto/broker";
+package broker;
+import "google/protobuf/any.proto";
+
+// Publisher风格下, 可被所有服务公用
+message HimladMessage {
+    string event_name = 1;
+    google.protobuf.Any data = 2;
+}
+
+message User {
+    string username = 1;
+}

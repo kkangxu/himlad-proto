@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package iam;
+
+import "base/base.proto";
+import "iam/iam.proto";
+option go_package = "github.com/kkangxu/himlad-proto/iam";
+
+
+message ReqGetUser {
+    BaseReq comm = 1;
+    message ReqPara {
+        string username = 1;
+    }
+    ReqPara para = 2;
+}
+
+message RspGetUser {
+    BaseRet result = 1;
+    message RetData {
+        User user = 1;
+    }
+    RetData data = 2;
+}
+
+service Iam {
+    rpc GetUser(ReqGetUser) returns (RspGetUser) {};
+}

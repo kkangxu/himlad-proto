@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "github.com/kkangxu/himlad-proto/code";
+
+// 逻辑错误码
+enum ErrCode {
+    // 公共错误码[0-10000]
+    // 成功
+    Success = 0;
+    // 请求参数错误
+    ReqParamInvalid = 1;
+    // 访问内部服务错误
+    InternalSystemErr = 2;
+    // 参数错误
+    InvalidParameter= 3;
+    // 参数取值错误
+    InvalidParameterValue = 4;
+    // 缺少参数错误，必传参数没填
+    MissingParameter = 5;
+    // 未知参数错误，用户多传未定义的参数会导致错误
+    UnknownParameter = 6;
+    // 内部错误
+    InternalError = 7;
+    // 未授权操作
+    UnauthorizedOperation = 8;
+    // 操作不支持
+    UnsupportedOperation = 9;
+    // 资源不存在
+    ResourceNotFound = 10;
+    // 超过配额限制
+    LimitExceeded = 11;
+    // 资源不可用
+    ResourceUnavailable = 12;
+    // 资源不足
+    ResourceInsufficient = 13;
+    // 操作失败
+    FailedOperation = 14;
+    // 资源被占用
+    ResourceInUse = 15;
+    // 空操作
+    DryRunOperation = 16;
+    // 资源售罄
+    ResourcesSoldOut= 17;
+    // 鉴权错误
+    AuthFailure= 18;
+    // 操作被拒绝
+    OperationDenied = 19;
+    // 请求的次数超过了频率限制
+    RequestLimitExceeded = 20;
+}
